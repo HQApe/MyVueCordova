@@ -1,0 +1,31 @@
+{
+  "name": "com.mysoft.mdev",
+  "displayName": "MCDVVue",
+  "version": "1.0.0",
+  "description": "A sample Apache Cordova application that responds to the deviceready event.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "Apache Cordova Team",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "MEngineerKit": "file:../../../Work/Plugins/mengineerkit",
+    "MNFC": "file:../../../Work/Plugins/mnfc",
+    "container": "file:../../../Work/Plugins/container",
+    "cordova-ios": "^6.3.0",
+    "mysoft-plugin-core": "file:../../../Work/Plugins/mysoft-plugin-core"
+  },
+  "cordova": {
+    "platforms": [
+      "ios"
+    ],
+    "plugins": {
+      "com.mysoft.mnfc": {},
+      "com.mysoft.container": {}
+    }
+  }
+}
