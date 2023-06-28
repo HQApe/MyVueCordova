@@ -1,13 +1,32 @@
 <template>
     <div class="page-home">
-        <my-navigation-bar :title="title" color="#f00" backgroud="#00f"></my-navigation-bar>
-
-        <div id="tab-bar">
-            <div class="tab-bar-item">首页</div>
-            <div class="tab-bar-item">分类</div>
-            <div class="tab-bar-item">购物车</div>
-            <div class="tab-bar-item">我的</div>
+        <div class="my-navigation-bar">
+            首页
+            <button class="item-more" @click="onclicked">More</button>
         </div>
+        <p>
+            <!-- router-link标签属性 -->
+            <router-link :to="'/detail/' + 20123">导航去详情</router-link>
+        </p>
+        <input type="text" v-model.lazy="message"/>
+        <input type="text" v-model.trim="password"/>
+        <p>输入的内容{{ message + '===' + password }}</p>
+        <label for="male">
+            <input type="radio" id="male" value="男" v-model="sex"/>男
+        </label>
+        <label for="female">
+            <input type="radio" id="female" value="女" v-model="sex"/>女
+        </label>
+        <p>选择的性别是：{{ sex }}</p>
+        <h2>爱好：</h2>
+        <div class="hobbies">
+            <input type="checkbox" value="篮球" v-model="hobbies"/>篮球
+            <input type="checkbox" value="足球" v-model="hobbies"/>足球
+            <input type="checkbox" value="乒乓球" v-model="hobbies"/>乒乓球
+            <input type="checkbox" value="羽毛球" v-model="hobbies"/>羽毛球
+            <h3>爱好是：{{ hobbies }}</h3>
+        </div>
+
     </div>
 </template>
 
@@ -19,11 +38,15 @@ export default {
     components:{MyNavigationBar},
     data () {
         return {
-            title: "首页"
+            title: "首页",
+            message:'Hello',
+            password:'',
+            sex:'男',
+            hobbies:[]
         }
     },
     methods:{
-        onTest() {
+        onclicked() {
 
         }
     }
@@ -31,32 +54,19 @@ export default {
 </script>
 
 <style scoped>
-@import url("../../assets/base.css");
-.page-home {
-    background: red;
-    display: flex;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
+.my-navigation-bar {
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    background-color: #1d7bff;
+    color: #fff;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-top: env(safe-area-inset-top, 0px) ;
 }
 
-#tab-bar{
-    display: flex;
-    background: #f6f6f6;
-    position: fixed;
-    left: 0px;
-    right: 0px;
-    bottom: 10px;
-    box-shadow: 0px -1px 7px rgb(100,100,100,0.2);
-}
-.tab-bar-item{
-    flex:1;
-    text-align: center;
-    height:49px;
-    padding-right: 20px;
-    margin-left: 20px;
-    background-color: blue;
+.my-navigation-bar .item-more {
+    margin-right: 0;
 }
 </style>

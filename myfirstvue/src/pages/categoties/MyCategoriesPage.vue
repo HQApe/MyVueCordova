@@ -7,7 +7,7 @@
             </div>
             <div>查看更多》</div>
         </div>
-        <div>
+        <div class="zhq-list">
             <div class="zhq-item" v-for="n in 20" v-bind:key="n" v-on:click="onItemClicked(n)">
                 <div class="left-icon-box">
                     <img src="https://avatars.githubusercontent.com/u/18701895?v=4" alt="">
@@ -39,21 +39,21 @@ export default {
         },
         clickedDown(event){
             alert("You are clicked"+ event)
-        // 调用cordova插件
-        MNfc.startScan({
-        "onStart":function() {
-            console.log('onStart');
-        },
-        "onScan":function(data){
-            console.log(data);
-        },
-        "onClose":function() {
-            console.log('onClose');
-        },
-        "onError":function(err) {
-            console.log("errCode:" + err.errCode + "errMsg:" + err.errMsg);
-        }
-    });
+            // 调用cordova插件
+            MNfc.startScan({
+                "onStart":function() {
+                    console.log('onStart');
+                },
+                "onScan":function(data){
+                    console.log(data);
+                },
+                "onClose":function() {
+                    console.log('onClose');
+                },
+                "onError":function(err) {
+                    console.log("errCode:" + err.errCode + "errMsg:" + err.errMsg);
+                }
+            });
         }
     }
 }
@@ -61,18 +61,26 @@ export default {
 
 
 <style scoped>
-
-@import url('../../assets/base.css');
-
 .page-categories {
-    margin-bottom: 88px;
+    padding-top: 44px;
+    padding-bottom: 45px;
 }
 
 .zhq-strategy {
     display: flex;
+    position: fixed;
+    padding-top: 10px;
+    height: 35px;
+    width: 100%;
+    background: white;
     justify-content: space-between;
     border-bottom: 0.5px solid lightgray;
 }
+
+.zhq-list {
+    padding-top: 45px;
+}
+
 .zhq-strategy .zhq-title {
     display: flex;
     margin-top: 0px;
@@ -87,7 +95,7 @@ export default {
 }
 
 .zhq-item .left-icon-box {
-    /* flex: 50px 50px 100px 100px; */
+    flex: 50px 50px 100px 100px;
     background-color: red;
 }
 

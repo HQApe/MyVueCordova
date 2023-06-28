@@ -5,6 +5,7 @@ import MyHomePage from '../pages/home/MyHomePage'
 import MyCategoriesPage from '../pages/categoties/MyCategoriesPage'
 import MyShopPage from '../pages/shop/MyShopPage'
 import MyProfilePage from '../pages/profile/MyProfilePage'
+import MyGodsDetailePage from '../pages/categoties/MyGodsDetailePage'
 
 Vue.use(VueRouter)
 
@@ -13,7 +14,8 @@ const routes = [
     { path: '/home', component: MyHomePage},
     { path: '/categories', component: MyCategoriesPage},
     { path: '/shop', component: MyShopPage},
-    { path:'/me', component: MyProfilePage}
+    { path: '/me', component: MyProfilePage},
+    { path: '/detail/:goodsId', component: MyGodsDetailePage}
 ]
 
 const router = new VueRouter({

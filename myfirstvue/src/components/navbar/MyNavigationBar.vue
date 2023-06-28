@@ -1,7 +1,7 @@
 <template>
     <div class="my-navigation-bar" :style="{backgroundColor:backgroud, color:color}">
         {{title}}
-        <button class="item-more" v-on:click="$emit('showup', title)">More</button>
+        <button class="item-more" v-on:click="onclicked">More</button>
     </div>
 </template>
 
@@ -18,6 +18,11 @@ export default {
         title:{
             type: String,
             required: true
+        }
+    },
+    methods: {
+        onclicked() {
+            this.$emit('showup', this.$parent.title)
         }
     }
 }
