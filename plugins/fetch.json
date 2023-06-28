@@ -1,0 +1,26 @@
+{
+  "cordova-plugin-custom-config": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-custom-config"
+    },
+    "is_top_level": false,
+    "variables": {}
+  },
+  "com.mysoft.mnfc": {
+    "source": {
+      "type": "local",
+      "path": "/Users/zhanghq/Desktop/VueDemo/MCDVVue/node_modules/MNFC"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "com.mysoft.container": {
+    "source": {
+      "type": "local",
+      "path": "/Users/zhanghq/Desktop/VueDemo/MCDVVue/node_modules/container"
+    },
+    "is_top_level": true,
+    "variables": {}
+  }
+}

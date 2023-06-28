@@ -1,0 +1,64 @@
+{
+  "_from": "cordova-plugin-custom-config",
+  "_id": "cordova-plugin-custom-config@1.0.4",
+  "_inBundle": false,
+  "_integrity": "sha512-j09NYTnWYtrFs5GM1BV5gsOuoOZPhQ6lV42XCCOOLnZ5YRnoLR1bsO+0z+o9p4Bvf3HOnlqMgv9dP7Sw2HTPnQ==",
+  "_location": "/cordova-plugin-custom-config",
+  "_phantomChildren": {
+    "simple-plist": "1.3.1"
+  },
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "cordova-plugin-custom-config",
+    "name": "cordova-plugin-custom-config",
+    "escapedName": "cordova-plugin-custom-config",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#DEV:/",
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmmirror.com/cordova-plugin-custom-config/-/cordova-plugin-custom-config-1.0.4.tgz",
+  "_shasum": "25f78c544f6f4abb724823412af8c64205d5600f",
+  "_spec": "cordova-plugin-custom-config",
+  "_where": "/Users/zhanghq",
+  "author": {
+    "name": "fengyang0329"
+  },
+  "bugs": {
+    "url": "https://github.com/fengyang0329/cordova-plugin-custom-config/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-custom-config",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "dependencies": {
+    "colors": "1.4.0",
+    "elementtree": "^0.1.7",
+    "fs": "0.0.1-security",
+    "lodash": "^4.17.21",
+    "path": "^0.12.7",
+    "plist": "^3.0.2",
+    "shelljs": "^0.8.4",
+    "xcode": "^3.0.1"
+  },
+  "deprecated": false,
+  "description": "根据plugin.xml或者config.xml中定义的自定义配置更新平台配置",
+  "homepage": "https://github.com/fengyang0329/cordova-plugin-custom-config#readme",
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "license": "MIT",
+  "name": "cordova-plugin-custom-config",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fengyang0329/cordova-plugin-custom-config.git"
+  },
+  "version": "1.0.4"
+}

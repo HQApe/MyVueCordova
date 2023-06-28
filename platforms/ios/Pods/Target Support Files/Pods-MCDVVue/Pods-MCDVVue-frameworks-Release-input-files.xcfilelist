@@ -1,0 +1,10 @@
+${PODS_ROOT}/Target Support Files/Pods-MCDVVue/Pods-MCDVVue-frameworks.sh
+${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework
+${BUILT_PRODUCTS_DIR}/CoreEngine/CoreEngine.framework
+${BUILT_PRODUCTS_DIR}/CrashKiller/CrashKiller.framework
+${BUILT_PRODUCTS_DIR}/FMDB-isExecutingStatement/FMDB.framework
+${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework
+${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework
+${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
+${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework
+${BUILT_PRODUCTS_DIR}/TFHpple/TFHpple.framework

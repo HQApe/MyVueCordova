@@ -1,0 +1,18 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "com.mysoft.mnfc": {
+      "PACKAGE_NAME": "com.mysoft.mdev"
+    },
+    "com.mysoft.container": {
+      "PACKAGE_NAME": "com.mysoft.mdev"
+    }
+  },
+  "dependent_plugins": {}
+}

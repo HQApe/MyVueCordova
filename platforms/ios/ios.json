@@ -1,0 +1,85 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {
+      "config.xml": {
+        "parents": {
+          "/*": [
+            {
+              "xml": "<feature name=\"MNfc\"><param name=\"ios-package\" value=\"MNfc\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"container\"><param name=\"ios-package\" value=\"MCDVContainer\" /></feature>",
+              "count": 1
+            }
+          ]
+        }
+      },
+      "*-Info.plist": {
+        "parents": {
+          "splashLoading": [],
+          "showRefreshWhenWhiteScreen": [],
+          "NSAppTransportSecurity": [],
+          "ITSAppUsesNonExemptEncryption": [],
+          "NOT_CHECK_SPLASH_SCREEN": []
+        }
+      },
+      "*-Debug.plist": {
+        "parents": {
+          "com.apple.developer.nfc.readersession.formats": [
+            {
+              "xml": "<array><string>NDEF</string><string>TAG</string></array>",
+              "count": 1
+            }
+          ]
+        }
+      },
+      "*-Release.plist": {
+        "parents": {
+          "com.apple.developer.nfc.readersession.formats": [
+            {
+              "xml": "<array><string>NDEF</string><string>TAG</string></array>",
+              "count": 1
+            }
+          ]
+        }
+      }
+    }
+  },
+  "installed_plugins": {
+    "com.mysoft.mnfc": {
+      "PACKAGE_NAME": "com.mysoft.mdev"
+    },
+    "com.mysoft.container": {
+      "PACKAGE_NAME": "com.mysoft.mdev"
+    }
+  },
+  "dependent_plugins": {},
+  "modules": [
+    {
+      "id": "com.mysoft.mnfc.MNfc",
+      "file": "plugins/com.mysoft.mnfc/www/MNfc.js",
+      "pluginId": "com.mysoft.mnfc",
+      "clobbers": [
+        "MNfc"
+      ]
+    },
+    {
+      "id": "com.mysoft.container.container",
+      "file": "plugins/com.mysoft.container/www/container.js",
+      "pluginId": "com.mysoft.container",
+      "clobbers": [
+        "container"
+      ],
+      "runs": true
+    }
+  ],
+  "plugin_metadata": {
+    "com.mysoft.mnfc": "1.0.3",
+    "com.mysoft.container": "1.1.0"
+  }
+}

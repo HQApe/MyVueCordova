@@ -1,0 +1,39 @@
+PODS:
+  - CoreEngine (1.3.0):
+    - FMDB
+    - MBProgressHUD
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - Masonry (1.1.0)
+  - MBProgressHUD (1.2.0)
+  - SDWebImage (5.13.4):
+    - SDWebImage/Core (= 5.13.4)
+  - SDWebImage/Core (5.13.4)
+
+DEPENDENCIES:
+  - CoreEngine (from `/Users/zhanghq/Work/AppCloud/PodSpaces/CoreEngine`)
+  - Masonry (= 1.1.0)
+  - SDWebImage (= 5.13.4)
+
+SPEC REPOS:
+  trunk:
+    - FMDB
+    - Masonry
+    - MBProgressHUD
+    - SDWebImage
+
+EXTERNAL SOURCES:
+  CoreEngine:
+    :path: "/Users/zhanghq/Work/AppCloud/PodSpaces/CoreEngine"
+
+SPEC CHECKSUMS:
+  CoreEngine: de952b13f3fb3cfa2dbc050742423c8385d159e5
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  SDWebImage: e5cc87bf736e60f49592f307bdf9e157189298a3
+
+PODFILE CHECKSUM: 60e949fe9062d22a568a329fb1c73757d6e1fe8e
+
+COCOAPODS: 1.11.3

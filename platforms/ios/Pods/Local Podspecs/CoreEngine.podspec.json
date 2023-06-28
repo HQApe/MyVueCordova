@@ -1,0 +1,42 @@
+{
+  "name": "CoreEngine",
+  "version": "1.3.0",
+  "summary": "iOS 核心基础库",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "git@gitlab.mypaas.com.cn:appcloud/cocoapods/coreengine",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "longzh": "longzh@mingyuanyun.com"
+  },
+  "source": {
+    "git": "git@gitlab.mypaas.com.cn:appcloud/cocoapods/coreengine.git",
+    "tag": "1.3.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "CoreEngine/Classes/**/*",
+  "public_header_files": "CoreEngine/Classes/**/*.h",
+  "dependencies": {
+    "FMDB": [
+
+    ],
+    "MBProgressHUD": [
+
+    ]
+  },
+  "frameworks": [
+    "UIKit",
+    "MobileCoreServices",
+    "AVFoundation",
+    "Contacts",
+    "Photos",
+    "Accelerate"
+  ],
+  "xcconfig": {
+    "OTHER_LDFLAGS": "-ObjC"
+  }
+}
