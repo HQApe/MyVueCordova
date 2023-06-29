@@ -11,15 +11,24 @@ Vue.use(VueRouter)
 
 const routes = [
     { path: '/', redirect: '/home'},
-    { path: '/home', component: MyHomePage},
-    { path: '/categories', component: MyCategoriesPage},
-    { path: '/shop', component: MyShopPage},
-    { path: '/me', component: MyProfilePage},
-    { path: '/detail/:goodsId', component: MyGodsDetailePage}
+    { path: '/home', name:'首页', component: MyHomePage},
+    { path: '/categories', name:'分类', component: MyCategoriesPage},
+    { path: '/shop', name:'购物车', component: MyShopPage},
+    { path: '/me', name:'我的', component: MyProfilePage},
+    { path: '/detail/:goodsId', name:'详情', component: MyGodsDetailePage}
 ]
 
 const router = new VueRouter({
     routes // (缩写) 相当于 routes: routes
+})
+
+router.beforeEach((to, from, next)=>{
+    document.title = to.name
+    console.log('++++++')
+    next()
+})
+router.afterEach((to, from)=>{
+    console.log('------')
 })
 
 export default router
