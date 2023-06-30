@@ -117,7 +117,7 @@ export default {
             sex:'男',
             hobbies:[],
             currentTab: "A",
-          tabs: ["A", "B"]
+            tabs: ["A", "B"]
         }
     },
     methods:{
@@ -149,7 +149,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .my-navigation-bar {
     height: 45px;
     line-height: 45px;
@@ -165,7 +165,9 @@ export default {
 .my-navigation-bar .item-more {
     margin-right: 0;
 }
-
+.dynamic-component-demo {
+  display: flex;
+}
 .tab-button {
   padding: 6px 10px;
   border-top-left-radius: 3px;
@@ -190,7 +192,7 @@ export default {
   display: flex;
 }
 .posts-sidebar {
-  max-width: 40vw;
+  max-width: 200vw;
   margin: 0;
   padding: 0 10px 0 0;
   list-style-type: none;
