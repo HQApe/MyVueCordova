@@ -121,7 +121,10 @@ export default {
     text-align: left;
     line-height: 20px;
     overflow:hidden;
-    word-break: break-all;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
 }
 
 .zhq-item .right-box .time {
