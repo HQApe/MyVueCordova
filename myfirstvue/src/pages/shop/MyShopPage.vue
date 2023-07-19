@@ -1,19 +1,39 @@
 <template>
-    <div class="page-shop">
-        <div class="nav-title">前端小课</div>
-        <span class="section-title">简介</span>
-        <p class="des">
-            《前端小课》是一本关于前端入门到进阶的多媒体电子书，通过公众号的形式呈现内容，并与粉丝形成互动．推动读者自我驱动，利用业余时间学习前端，迎合大前端的浪潮。
-        </p>
-        <span class="section-title">关于创办者</span>
-        <p class="des">创办者，素燕，来自一线大厂互联网从业者，做过移到端开发，非常热爱大前端热爱跨平台技术，希望能够把前端技术灵活运用到移动端。</p>
-        
-        <span class="section-title">打开学习</span>
-        <p class="des">
-            目前共有<span>220+</span>名同学加入打卡学习队伍中，它们来自不同的领域，有is，Android和前端的小伙伴。添加微信wsy9871，备注小课，便会有人邀请加入微信群。
-        </p>
-        <div class="triangle"></div>
-        <div class="icon"></div>
+    <div class="moments">
+        <div class="header">
+        </div>
+        <div id="my-info">
+                <span>天那边</span>
+                <div id="header-icon"></div>
+            </div>
+        <div class="coments-item">
+            <div class="user-header"></div>
+            <div class="container">
+                <p class="user-title">互帮互助</p>
+                <p class="content">纪念《前端小课》第二阶段课程圆满结束，这一阶段主要搞定CSS布局。以实现一个朋友圈为实践。你说CSS牛不牛。</p>
+                <div class="pic-container">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="time-action">
+                    <p class="time-indicator">2小时前</p>
+                    <div class="more-action"></div>
+                </div>
+                <div class="active-container">
+                    <div class="prais">
+
+                    </div>
+                    <div class="comments">
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -25,7 +45,8 @@ export default {
     components:{MyNavigationBar},
     data () {
         return {
-            title: "购物车"
+            title: "购物车",
+            cover:require('../../assets/moments/cover.png'),
         }
     },
      methods: {
@@ -44,51 +65,160 @@ export default {
 </script>
 
 <style scoped>
-
 * {
     margin: 0;
     padding: 0;
 }
 
-.nav-title {
-    color: black;
-    text-align: center;
-    font-weight: bold;
-    font-size: 28px;
-    border-bottom: 1px solid #dcdcdc;
+.moments {
+    padding-bottom: 60px;
 }
 
-.section-title {
-    color: #258BD6;
+.header {
+    height: 300px;
+    background-image: url('../../assets/moments/cover.png');
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 40px;
+}
+
+#my-info {
+    /* float: right; */
+    margin-right: 20px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    position: absolute;
+    top: 255px;
+    right: 0px;
+}
+
+#my-info span {
+    color: white;
+    padding-right: 20px;
+    padding-bottom: 10px;
+}
+
+#header-icon {
+    height: 60px;
+    width: 60px;
+    background-image: url('../../assets/moments/my.jpg');
+    background-size: 60px 60px;
+    border-radius: 10px;
+}
+
+.coments-item {
+    margin: 10px 20px 0px 20px;
+    width: 450px;
+    display: flex;
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 10px;
+}
+
+.user-header {
+    width: 60px;
+    height: 60px;
+    background-image: url('../../assets/moments/1.png');
+    background-size: contain;
+    flex-shrink: 0;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.user-title {
+    padding-top: 5px;
     font-size: 18px;
-    margin-left: 10px;
-    border-bottom: 1px solid #258BD6;
+    color: cadetblue;
 }
 
-p {
-    margin-left: 10px;
-    padding:20px 0 20px 0;
+.content {
+    padding: 10px 0px 10px 0px;
+    font-size: 16px;
     color: black;
-    font-size: 15px;
+    line-height: 25px;
 }
 
-p>span {
-    color: red;
+.pic-container {
+    width: 300px;
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
 }
 
-.triangle {
-      width: 0;
-      /* width style */
-      border: 20px solid;
-      /* top [left, tight] bottom*/
-      border-color: #f30 transparent transparent;
+.pic-container div {
+    width: 100px;
+    height: 100px;
 }
 
-.icon {
+.pic-container div:nth-child(1) {
+    background-image: url('../../assets/moments/2.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.pic-container div:nth-child(2) {
+    background-image: url('../../assets/moments/3.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.pic-container div:nth-child(3) {
+    background-image: url('../../assets/moments/4.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.pic-container div:nth-child(4) {
+    background-image: url('../../assets/moments/1.png');
+    background-size: cover;
+    background-position: center;
+}
+
+
+.pic-container div:nth-child(5) {
+    background-image: url('../../assets/moments/2.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.pic-container div:nth-child(6) {
+    background-image: url('../../assets/moments/3.png');
+    background-size: cover;
+    background-position: center;
+}
+
+
+.pic-container div:nth-child(7) {
+    background-image: url('../../assets/moments/4.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.time-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.time-indicator {
+    color: lightgray;
+    padding: 10px 0px 10px 0px;
+    font-size: 14px;
+}
+
+.more-action {
+    width: 40px;
+    height: 25px;
+    background-image: url('../../assets/moments/star.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.active-container {
+    height: 60px;
     background-color: antiquewhite;
-    width: 15px;
-    height: 15px;
-    border: 11px solid transparent;
 }
-
 </style>
