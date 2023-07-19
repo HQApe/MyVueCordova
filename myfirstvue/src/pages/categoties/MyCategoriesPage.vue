@@ -68,7 +68,8 @@ export default {
 
 .zhq-strategy {
     display: flex;
-    position: fixed;
+    position: sticky;
+    top: 45px;
     padding-top: 10px;
     height: 35px;
     width: 100%;
@@ -78,7 +79,7 @@ export default {
 }
 
 .zhq-list {
-    padding-top: 45px;
+    /* padding-top: 45px; */
 }
 
 .zhq-strategy .zhq-title {
