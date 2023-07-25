@@ -6,7 +6,7 @@
                 <span>天那边</span>
                 <div id="header-icon"></div>
             </div>
-        <div class="coments-item">
+        <div class="coments-item" v-for="i in 3" v-bind:key="i">
             <div class="user-header"></div>
             <div class="container">
                 <p class="user-title">互帮互助</p>

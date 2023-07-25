@@ -1,220 +1,237 @@
 <template>
     <div class="page-home">
-        <div class="my-navigation-bar">
-            首页
-            <button class="item-more" @click="onclicked">More</button>
+      <div id="nav">
+        <div id="nav-left">
+          <p>前端小课</p>
         </div>
-        <p>
-            <!-- router-link标签属性 -->
-            <router-link :to="'/detail/' + 20123">导航去详情</router-link>
-        </p>
-        <input type="text" v-model.lazy="message"/>
-        <input type="text" v-model.trim="password"/>
-        <p>输入的内容{{ message + '===' + password }}</p>
-        <label for="male">
-            <input type="radio" id="male" value="男" v-model="sex"/>男
-        </label>
-        <label for="female">
-            <input type="radio" id="female" value="女" v-model="sex"/>女
-        </label>
-        <p>选择的性别是：{{ sex }}</p>
-        <h2>爱好：</h2>
-        <div class="hobbies">
-            <input type="checkbox" value="篮球" v-model="hobbies"/>篮球
-            <input type="checkbox" value="足球" v-model="hobbies"/>足球
-            <input type="checkbox" value="乒乓球" v-model="hobbies"/>乒乓球
-            <input type="checkbox" value="羽毛球" v-model="hobbies"/>羽毛球
-            <h3>爱好是：{{ hobbies }}</h3>
+        <div id="navi-right">
+          <p>给读者的一封信</p>
+          <p>学习资源</p>
+          <p>前端学习路线</p>
+          <div id="free-book">
+            <p>免费订阅</p>
+            <div id="notice"></div>
+          </div>
+          <p>GitHub</p>
         </div>
-        <div id="dynamic-component-demo">
-            <button
-                v-for="tab in tabs"
-                v-bind:key="tab"
-                v-bind:class="['tab-button', { active: currentTab === tab }]"
-                v-on:click="currentTab = tab"
-            >
-                {{ tab }}
-            </button>
-
-            <keep-alive>
-                <component v-bind:is="currentTabComponent" class="tab"></component>
-            </keep-alive>
+      </div>
+      <div id="content">
+        <div class="section header">
+          <div id="book-info">
+            <div id="book-img"></div>
+            <p>《前端小课》</p>
+            <p>一本免费多媒体电子书，从零开始学习前端技术，帮助10W人入门并进阶前端。</p>
+            <p>王素燕 / 著</p>
+          </div>
+          <div id="book-about">
+            <p>关于本书</p>
+            <p id="book-intr">前端小课是通过图片、文字、代码、视频等多种方式写成的一本多媒体电子书。全书分为不同的小书，每本小书旨在讲透一个知识点，比如 CSS布局、HTML、动画。以最基础的编程知识为起点，即使不懂编程的小白也能够通过本书学会编程，顺利进入互联网行业。
+本书最大的特色是通过公众号+图书+网站形成一个闭环。读者可通过公众号实时获得最新的前端知识，并与作者实时互动；通过图书可以系统地学习前端知识；通过网站可看到代码实时运行结果，真正的所见即所得。</p>
+            <button id="book-now">立即阅读</button>
+          </div>
         </div>
+        <div class="section book"></div>
+        <div class="section tools"></div>
+      </div>
+      <div id="bottom"></div>
     </div>
 </template>
 
 <script>
-import MyNavigationBar from '../../components/navbar/MyNavigationBar'
 
-var tabA = {
-    name:"tab-posts",
-    data: function() {
-          return {
-            posts: [
-              {
-                id: 1,
-                title: "Cat Ipsum",
-                content:
-                  "<p>Dont wait for the storm to pass, dance in the rain kick up litter decide to want nothing to do with my owner today demand to be let outside at once, and expect owner to wait for me as i think about it cat cat moo moo lick ears lick paws so make meme, make cute face but lick the other cats. Kitty poochy chase imaginary bugs, but stand in front of the computer screen. Sweet beast cat dog hate mouse eat string barf pillow no baths hate everything stare at guinea pigs. My left donut is missing, as is my right loved it, hated it, loved it, hated it scoot butt on the rug cat not kitten around</p>"
-              },
-              {
-                id: 2,
-                title: "Hipster Ipsum",
-                content:
-                  "<p>Bushwick blue bottle scenester helvetica ugh, meh four loko. Put a bird on it lumbersexual franzen shabby chic, street art knausgaard trust fund shaman scenester live-edge mixtape taxidermy viral yuccie succulents. Keytar poke bicycle rights, crucifix street art neutra air plant PBR&B hoodie plaid venmo. Tilde swag art party fanny pack vinyl letterpress venmo jean shorts offal mumblecore. Vice blog gentrify mlkshk tattooed occupy snackwave, hoodie craft beer next level migas 8-bit chartreuse. Trust fund food truck drinking vinegar gochujang.</p>"
-              },
-              {
-                id: 3,
-                title: "Cupcake Ipsum",
-                content:
-                  "<p>Icing dessert soufflé lollipop chocolate bar sweet tart cake chupa chups. Soufflé marzipan jelly beans croissant toffee marzipan cupcake icing fruitcake. Muffin cake pudding soufflé wafer jelly bear claw sesame snaps marshmallow. Marzipan soufflé croissant lemon drops gingerbread sugar plum lemon drops apple pie gummies. Sweet roll donut oat cake toffee cake. Liquorice candy macaroon toffee cookie marzipan.</p>"
-              }
-            ],
-            selectedPost: null
-          };
-        },
-        template: `
-  	<div class="posts-tab">
-      <ul class="posts-sidebar">
-        <li
-          v-for="post in posts"
-          v-bind:key="post.id"
-          v-bind:class="{ selected: post === selectedPost }"
-					v-on:click="selectedPost = post"
-        >
-          {{ post.title }}
-        </li>
-      </ul>
-      <div class="selected-post-container">
-      	<div
-        	v-if="selectedPost"
-          class="selected-post"
-        >
-          <h3>{{ selectedPost.title }}</h3>
-          <div v-html="selectedPost.content"></div>
-        </div>
-        <strong v-else>
-          Click on a blog title to the left to view it.
-        </strong>
-      </div>
-    </div>
-  `
-}
 
-var tabB = {
-    name:"tab-archive",
-    template: "<div>Archive component <input type='text'/></div>"
-}
 
 export default {
     name:'HomePage',
-    components:{MyNavigationBar, tabA, tabB},
     data () {
         return {
-            title: "首页",
-            message:'Hello',
-            password:'',
-            sex:'男',
-            hobbies:[],
-            currentTab: "A",
-            tabs: ["A", "B"]
+            title: "首页"
         }
     },
     methods:{
-        onclicked() {
-            new Promise((resolve, reject)=>{
-                
-                setTimeout(() => {
-                    resolve('Hello World')
-                }, 1000);
-
-            }).then((result) => {
-                console.log(result);
-                return result + '11111'
-            }).then((result) => {
-                console.log(result);
-                return result + '22222'
-            }).then((result) => {
-                console.log(result);
-            }).catch((err) => {
-                console.error(err);
-            });
-        }
     },
   computed: {
-          currentTabComponent: function() {
-            return "tab" + this.currentTab;
-          }
-        }
+          
+  }
 }
 </script>
 
-<style>
-.my-navigation-bar {
-    height: 45px;
-    line-height: 45px;
-    text-align: center;
-    background-color: #1d7bff;
-    color: #fff;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding-top: env(safe-area-inset-top, 0px) ;
+<style scoped>
+
+.page-home {
+    background-color: #efefef;
+  }
+
+@media screen and (min-width: 1200px) {
+  .page-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #content {
+    width: 1200px;
+  }
 }
 
-.my-navigation-bar .item-more {
-    margin-right: 0;
-}
-.dynamic-component-demo {
+#nav {
+  background-color: white;
+  height: 44px;
+  width: 100%;
   display: flex;
+  position:fixed;
+  top: 0px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ececec;
 }
-.tab-button {
-  padding: 6px 10px;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-  border: 1px solid #ccc;
-  cursor: pointer;
-  background: #f0f0f0;
-  margin-bottom: -1px;
-  margin-right: -1px;
+
+#content {
+  padding-top: 44px;
 }
-.tab-button:hover {
-  background: #e0e0e0;
+
+#bottom {
+  height: 200px;
+  width: 100%;
+  background-color: antiquewhite;
+  margin-top: 20px;
+  padding-bottom: 49px;
 }
-.tab-button.active {
-  background: #e0e0e0;
+
+.section {
+  background-color: white;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
 }
-.tab {
-  border: 1px solid #ccc;
-  padding: 10px;
-}
-.posts-tab {
+
+#nav-left {
+  width: 250px;
   display: flex;
+  justify-content: right;
+  align-items: center;
+  flex-shrink: 0;
 }
-.posts-sidebar {
-  max-width: 200vw;
-  margin: 0;
-  padding: 0 10px 0 0;
-  list-style-type: none;
-  border-right: 1px solid #ccc;
+
+#nav-left p {
+  font-size: 22px;
+  margin-right: 10px;
 }
-.posts-sidebar li {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  cursor: pointer;
+
+#navi-right {
+  display: flex;
+  width: 650px;
+  margin-right: 20px;
+  flex-shrink: 0;
+  justify-content: space-between;
 }
-.posts-sidebar li:hover {
-  background: #eee;
+
+/* 给文字后面添加图片 */
+#navi-right p:last-child::after {
+  content: '';
+  background-image: url('../../assets/moments/star_small.png');
+  display: inline-block;
+  margin-left: 5px;
+  width: 15px;
+  height: 15px;
+  vertical-align: middle;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
-.posts-sidebar li.selected {
-  background: lightblue;
+
+#free-book {
+  display: flex;
+  /*父相子绝 */
+  position: relative;
 }
-.selected-post-container {
-  padding-left: 10px;
+
+#notice {
+  background-color: red;
+  width: 5px;
+  height: 5px;
+  border-radius: 2.5px;
+  position: absolute;
+  top: 15px;
+  right: -5px;
 }
-.selected-post > :first-child {
-  margin-top: 0;
-  padding-top: 0;
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
+
+#book-info {
+  width: 200px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#book-info p {
+  margin: 10px;
+}
+
+#book-info p:nth-child(2) {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#book-info p:nth-child(3) {
+  font-size: 14px;
+}
+
+#book-info p:nth-child(4) {
+  font-size: 10px;
+}
+
+
+#book-img {
+  background-color: red;
+  width: 200px;
+  height: 200px;
+  flex-shrink: 0;
+}
+
+#book-about {
+  padding-top: 50px;
+  padding-right: 20px;
+  padding-bottom: 50px;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  margin-left: 60px;
+}
+
+#book-about p:first-child {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+#book-intr {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+#book-now {
+  background-color: rgba(53, 130, 238, 0.929);
+  color: white;
+  font-size: 18px;
+  align-self: flex-start;
+  padding: 10px 30px 10px 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+.book,.tools {
+  height: 300px;
+  background-color: antiquewhite;
+}
+
 </style>
