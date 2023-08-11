@@ -2,6 +2,7 @@
     <div class="page-home">
       <div id="nav">
         <div id="nav-left">
+          <div id="nav-more"></div>
           <p>前端小课</p>
         </div>
         <div id="navi-right">
@@ -59,18 +60,50 @@ export default {
 <style scoped>
 
 .page-home {
-    background-color: #efefef;
-  }
-
-@media screen and (min-width: 1200px) {
-  .page-home {
     display: flex;
+    background-color: #efefef;
     flex-direction: column;
     align-items: center;
   }
 
+/*匹配带有屏幕的设备，只适用于屏幕超过 1200px的设备 */
+@media screen and (min-width: 1200px) {
   #content {
     width: 1200px;
+  }
+  #nav-left {
+    width: 250px;
+    display: flex;
+    justify-content: flex-start;
+    flex-shrink: 0;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  #nav-more {
+    visibility: hidden;
+  }
+  #nav-left {
+    justify-content: space-between;
+  }
+}
+
+/*匹配带有屏幕的设备，只适用于屏幕低于 800px的设备 */
+@media screen and (max-width: 850px) {
+  .header {
+    flex-direction: column;
+  }
+
+  #navi-right {
+    visibility: hidden;
+  }
+
+  #nav-more {
+    visibility: visible;
+  }
+
+  #nav-left {
+    justify-content: flex-start;
   }
 }
 
@@ -80,7 +113,9 @@ export default {
   width: 100%;
   display: flex;
   position:fixed;
-  top: 0px;
+  /**如果要顶满安全区的状态栏，需要设置top=0 */
+  top: 0;
+  padding-top: env(safe-area-inset-top, 0px) ;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #ececec;
@@ -95,7 +130,7 @@ export default {
   width: 100%;
   background-color: antiquewhite;
   margin-top: 20px;
-  padding-bottom: 49px;
+  margin-bottom: calc(env(safe-area-inset-bottom, 0px) + 49px);
 }
 
 .section {
@@ -109,19 +144,26 @@ export default {
 #nav-left {
   width: 250px;
   display: flex;
-  justify-content: right;
   align-items: center;
   flex-shrink: 0;
 }
 
 #nav-left p {
   font-size: 22px;
-  margin-right: 10px;
+  margin-right: 40px;
+}
+
+#nav-more {
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 50px;
+  height: 44px;
+  background-color: #ececec;
 }
 
 #navi-right {
   display: flex;
-  width: 650px;
+  width: 600px;
   margin-right: 20px;
   flex-shrink: 0;
   justify-content: space-between;
@@ -159,7 +201,6 @@ export default {
 
 .header {
   display: flex;
-  flex-direction: row;
   align-items: center;
 }
 
@@ -169,6 +210,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: 20px;
 }
 
 #book-info p {
@@ -190,10 +232,13 @@ export default {
 
 
 #book-img {
-  background-color: red;
+  background-image: url('https://z3.ax1x.com/2021/04/11/c0KRBj.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-clip: content-box;
   width: 200px;
   height: 200px;
-  flex-shrink: 0;
 }
 
 #book-about {

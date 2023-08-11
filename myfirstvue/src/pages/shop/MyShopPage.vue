@@ -5,7 +5,7 @@
         <div id="my-info">
                 <span>天那边</span>
                 <div id="header-icon"></div>
-            </div>
+        </div>
         <div class="coments-item" v-for="i in 3" v-bind:key="i">
             <div class="user-header"></div>
             <div class="container">
@@ -65,9 +65,11 @@ export default {
 </script>
 
 <style scoped>
-* {
-    margin: 0;
-    padding: 0;
+
+@media screen and (min-width: 500px) {
+    .moments {
+        width: 500px;
+    }
 }
 
 .moments {
@@ -89,7 +91,7 @@ export default {
     justify-content: end;
     align-items: center;
     position: absolute;
-    top: 255px;
+    top: calc(env(safe-area-inset-bottom, 0px) + 275px);
     right: 0px;
 }
 
@@ -109,7 +111,6 @@ export default {
 
 .coments-item {
     margin: 10px 20px 0px 20px;
-    width: 450px;
     display: flex;
     border-bottom: 1px solid #eeeeee;
     padding-bottom: 10px;
@@ -126,29 +127,30 @@ export default {
 }
 
 .user-title {
+    margin-top: 0px;
+    margin-bottom: 0px;
     padding-top: 5px;
     font-size: 18px;
     color: cadetblue;
 }
 
 .content {
-    padding: 10px 0px 10px 0px;
+    margin: 10px 0px 10px 0px;
     font-size: 16px;
     color: black;
     line-height: 25px;
 }
 
 .pic-container {
-    width: 300px;
     display: grid;
     grid-template-rows: repeat(3,1fr);
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    grid-gap: 10px;
 }
 
 .pic-container div {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
 }
 
 .pic-container div:nth-child(1) {
