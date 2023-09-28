@@ -73,7 +73,7 @@
 
 - (void)viewDidLoad
 {
-    self.startPage = @"http://10.11.70.99:8080/";
+    self.startPage = @"http://10.11.70.23:8080/";
     [super viewDidLoad];
     [self.launchView setAlpha:1];
 }

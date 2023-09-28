@@ -47,7 +47,6 @@
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />
     <allow-navigation href="*" />
-    
     <preference name="AllowBackForwardNavigationGestures" value="true" />
     <preference name="AllowInlineMediaPlayback" value="false" />
     <preference name="BackupWebStorage" value="cloud" />
